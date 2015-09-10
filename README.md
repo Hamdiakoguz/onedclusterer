@@ -21,7 +21,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Jenks natural breaks
+
+```ruby
+require 'onedclusterer'
+data = [1259.61,2024.82,1855.75,1559.04,1707.65,1107.1,2155.8]
+jenks = OnedClusterer::Jenks.new(data, 4)
+p jenks.bounds # => [0, 1259.61, 1559.04, 1855.75, 2155.8]
+p jenks.clusters # => [[1107.1, 1259.61], [1559.04], [1707.65, 1855.75], [2024.82, 2155.8]]
+```
 
 ## Development
 

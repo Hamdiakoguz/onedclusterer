@@ -1,5 +1,6 @@
 require "onedclusterer/version"
+require "onedclusterer/jenks"
 
-module Onedclusterer
-  # Your code goes here...
+
+module OnedClusterer
 end

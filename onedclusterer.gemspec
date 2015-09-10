@@ -5,7 +5,7 @@ require 'onedclusterer/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "onedclusterer"
-  spec.version       = Onedclusterer::VERSION
+  spec.version       = OnedClusterer::VERSION
   spec.authors       = ["Hamdi Akoguz"]
   spec.email         = ["hamdiakoguz@gmail.com"]
 
