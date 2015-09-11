@@ -2,6 +2,21 @@
 
 a tiny ruby library for one-dimensional clustering methods.
 
+## Usage
+
+### Jenks natural breaks
+
+The Jenks natural breaks classification method seeks to reduce the variance within classes and maximize the variance between classes.  
+http://en.wikipedia.org/wiki/Jenks_natural_breaks_optimization  
+http://www.macwright.org/2013/02/18/literate-jenks.html
+
+```ruby
+require 'onedclusterer'
+data = [1259.61,2024.82,1855.75,1559.04,1707.65,1107.1,2155.8]
+jenks = OnedClusterer::Jenks.new(data, 4)
+p jenks.bounds # => [0, 1259.61, 1559.04, 1855.75, 2155.8]
+p jenks.clusters # => [[1107.1, 1259.61], [1559.04], [1707.65, 1855.75], [2024.82, 2155.8]]
+```
 
 ## Installation
 
@@ -18,18 +33,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install onedclusterer
-
-## Usage
-
-### Jenks natural breaks
-
-```ruby
-require 'onedclusterer'
-data = [1259.61,2024.82,1855.75,1559.04,1707.65,1107.1,2155.8]
-jenks = OnedClusterer::Jenks.new(data, 4)
-p jenks.bounds # => [0, 1259.61, 1559.04, 1855.75, 2155.8]
-p jenks.clusters # => [[1107.1, 1259.61], [1559.04], [1707.65, 1855.75], [2024.82, 2155.8]]
-```
 
 ## Development
 
