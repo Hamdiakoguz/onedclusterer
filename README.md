@@ -4,7 +4,25 @@ a tiny ruby library for one-dimensional clustering methods.
 
 ## Usage
 
-### Jenks natural breaks
+### Ckmeans.1d.dp
+
+A dynamic programming algorithm for optimal one-dimensional k-means clustering. The algorithm minimizes the sum of squares of within-cluster distances. As an alternative to the standard heuristic k-means algorithm, this algorithm guarantees optimality and repeatability.  
+https://cran.r-project.org/web/packages/Ckmeans.1d.dp/index.html
+
+```ruby
+require 'onedclusterer'
+data = [1259.61,2024.82,1855.75,1559.04,1707.65,1107.1,2155.8]
+ckmeans = OnedClusterer::Ckmeans.new(data, 1, 7) # chooses an optimal number clusters between 1 and 7
+p ckmeans.bounds # => [0, 1259.61, 1855.75, 2155.8]
+p ckmeans.clusters # => [[1107.1, 1259.61], [1559.04, 1707.65, 1855.75], [2024.82, 2155.8]]
+
+# exact number of clusters can be requested instead of min and max
+ckmeans = OnedClusterer::Ckmeans.new(data, 4)
+p ckmeans.bounds # => [0, 1259.61, 1559.04, 1855.75, 2155.8]
+p ckmeans.clusters # => [[1107.1, 1259.61], [1559.04], [1707.65, 1855.75], [2024.82, 2155.8]]  
+```
+
+### Jenks natural breaks:
 
 The Jenks natural breaks classification method seeks to reduce the variance within classes and maximize the variance between classes.  
 http://en.wikipedia.org/wiki/Jenks_natural_breaks_optimization  
