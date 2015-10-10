@@ -16,7 +16,7 @@ module OnedClusterer
  # a continuous variable in discrete color or style groups. This function
  # can provide groups that emphasize differences between data.
  #
- # backtrack_matrixeing a dynamic approach, this algorithm is based on two matrices that
+ # being a dynamic approach, this algorithm is based on two matrices that
  # store incrementally-computed values for squared deviations and backtracking
  # indexes.
  #
