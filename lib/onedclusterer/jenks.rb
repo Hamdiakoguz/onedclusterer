@@ -1,10 +1,12 @@
 require 'matrix'
+require_relative 'clusterer'
 
 module OnedClusterer
   # [Jenks natural breaks optimization](http://en.wikipedia.org/wiki/Jenks_natural_breaks_optimization)
   #
   # Adapted from javascript implementation: https://gist.github.com/tmcw/4977508
   class Jenks
+    include Clusterer
 
     attr_reader :data, :n_classes
 

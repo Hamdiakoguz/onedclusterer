@@ -1,4 +1,5 @@
 require 'matrix'
+require_relative 'clusterer'
 
 module OnedClusterer
 
@@ -29,6 +30,7 @@ module OnedClusterer
  # from []The R Journal Vol. 3/2, December 2011](http://journal.r-project.org/archive/2011-2/RJournal_2011-2.pdf)
 
   class Ckmeans
+    include Clusterer
 
     attr_reader :data, :kmin, :kmax, :cluster_details
 
@@ -78,7 +80,7 @@ module OnedClusterer
     end
 
     def bounds
-      clusters.map { |cluster| cluster.last }.insert(0, 0)
+      @bounds ||= clusters.map { |cluster| cluster.last }.insert(0, 0)
     end
 
     private
