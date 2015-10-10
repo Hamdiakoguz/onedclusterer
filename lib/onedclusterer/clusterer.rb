@@ -11,5 +11,10 @@ module OnedClusterer
       bounds[1..-1].index { |bound| value <= bound }
     end
 
+    # Returns inclusive interval limits
+    def intervals
+      first, *rest = bounds.each_cons(2).to_a
+      [first, *rest.map {|lower, upper| [data[data.rindex(lower) + 1] , upper] }]
+    end
   end
 end
