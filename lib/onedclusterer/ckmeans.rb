@@ -32,7 +32,7 @@ module OnedClusterer
   class Ckmeans
     include Clusterer
 
-    attr_reader :data, :kmin, :kmax, :cluster_details
+    attr_reader :data, :kmin, :kmax
 
     # Input:
     #  data -- a vector of numbers, not necessarily sorted
@@ -52,7 +52,7 @@ module OnedClusterer
       raise ArgumentError, "kmax can not be greater than data size." if kmax > @data_size
     end
 
-    # returns clustered data as array and sets :cluster_details
+    # returns clustered data as array
     def clusters
       @clusters_result ||=begin
         if @unique <= 1 # A single cluster that contains all elements
