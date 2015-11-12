@@ -54,6 +54,8 @@ Or install it yourself as:
 
 ## Development
 
+[![Build Status](https://semaphoreci.com/api/v1/projects/7deb4c6b-9040-4872-9ed9-7ab2757493ba/600499/badge.svg)](https://semaphoreci.com/hamdiakoguz/onedclusterer)
+
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
